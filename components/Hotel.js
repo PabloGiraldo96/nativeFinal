@@ -66,7 +66,7 @@ export default function App() {
   ];
 
   const screenWidth = Dimensions.get('window').width;
-  const cardWidth = screenWidth * 0.9; // 90% del ancho de la pantalla
+  const cardWidth = screenWidth * 1.2; // 90% del ancho de la pantalla
 
 
   return (
@@ -89,10 +89,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-	backgroundColor:'#E9F1E4',
+	  backgroundColor:'#E9F1E4',
     alignItems: 'center',
     justifyContent: 'center',
-	margin: 10
+	  margin: 10
   },
   row: {
     flexDirection: 'row',
@@ -105,19 +105,19 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   col: {
-    width: '33%',
+    width: '65%',
     marginBottom: 10,
     marginTop: 10,
   },
   card: {
-	textAlign: 'center',
+	  textAlign: 'center',
     borderWidth: 1,
     borderColor: 'gray',
     padding: 10,
-	width: '75%',
-	height: '100%',
+    width: '45%',
+    height: '95%',
     marginBottom: 10,
-	marginTop: 10
+	  marginTop: 10
   },
   title: {
     fontSize: 18,
