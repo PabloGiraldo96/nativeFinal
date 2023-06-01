@@ -42,15 +42,16 @@ const Login = () => {
   let isValidName = nameRegex.test(username);
   let isValidPassword = passwordRegex.test(password);
 
-if(findUser != "" && isValidName != "" && isValidPassword !=""){
-  if (findUser != undefined){
-      if(isValidPassword){
-            navigation.navigate('Home');
-            setUsername('');
-            setPassword('');
-          }else {setError('Usuario o contraseña inválidos')}
-    } else {setError('Usuario no existe')}
-  } else{setError('Debe ingresar todos los campos') }
+// if(findUser != "" && isValidName != "" && isValidPassword !=""){
+//   if (findUser != undefined){
+//       if(isValidPassword){
+//             navigation.navigate('Home');
+//             setUsername('');
+//             setPassword('');
+//           }else {setError('Usuario o contraseña inválidos')}
+//     } else {setError('Usuario no existe')}
+//   } else{setError('Debe ingresar todos los campos') }
+  navigation.navigate('Home');
 };
 
 // Funcion limpiar campos
@@ -104,10 +105,12 @@ if(findUser != "" && isValidName != "" && isValidPassword !=""){
 const MainStackNavigator = () => {
   return (
     <Stack.Navigator>
+            <Stack.Screen name="Home" 
+        component={Hotel} />
       <Stack.Screen name="Login" 
         component={Login} />
-      <Stack.Screen name="Home" 
-        component={Hotel} />
+      {/* <Stack.Screen name="Home" 
+        component={Hotel} /> */}
       <Stack.Screen name="Registro Usuario" 
         component={RegistroUsuario} options={{ headerShown: false }}/>
     </Stack.Navigator>
