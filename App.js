@@ -42,16 +42,15 @@ const Login = () => {
   let isValidName = nameRegex.test(username);
   let isValidPassword = passwordRegex.test(password);
 
-// if(findUser != "" && isValidName != "" && isValidPassword !=""){
-//   if (findUser != undefined){
-//       if(isValidPassword){
-//             navigation.navigate('Home');
-//             setUsername('');
-//             setPassword('');
-//           }else {setError('Usuario o contraseña inválidos')}
-//     } else {setError('Usuario no existe')}
-//   } else{setError('Debe ingresar todos los campos') }
-  navigation.navigate('Home');
+if(findUser != "" && isValidName != "" && isValidPassword !=""){
+  if (findUser != undefined){
+      if(isValidPassword){
+            navigation.navigate('Home');
+            setUsername('');
+            setPassword('');
+          }else {setError('Usuario o contraseña inválidos')}
+    } else {setError('Usuario no existe')}
+  } else{setError('Debe ingresar todos los campos')}
 };
 
 // Funcion limpiar campos
