@@ -5,23 +5,10 @@ import {useEffect, useState } from 'react'
 import axios from 'axios';
 
 
-// const RoomCard = ({ item }) => (
-  
-//   <View style={styles.container}>
-// 	<Card style ={styles.card}>
-//     {/* <Image source={{ uri: habitacion.foto[0]}} style={styles.image} /> */}
-//     <Text style={styles.title}>{data[0].nombre}</Text>
-//     <Text style={styles.description}>{}</Text>
-//     <Text>
-//       <Text style={styles.icon}>x</Text>
-//       <Text>{}</Text>
-//     </Text>
-//     <Text style={styles.price}>Price: {item}</Text>
-// 	</Card>
-//   </View>
-// );
+
 
 export default function App() {
+  
   const [data, setData] = useState([])
   const getCustomers = async() =>{
     const response = await axios.get(`http://127.0.0.1:8080/buscarhabitaciones`)
