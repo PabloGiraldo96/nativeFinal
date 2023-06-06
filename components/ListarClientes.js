@@ -10,17 +10,15 @@ import axios from 'axios';
 export default function ListarClientes() {
   
   const [data, setData] = useState([])
-  const getCustomers = async() =>{
-    const response = await axios.get(`http://localhost:8080/buscarreservas`)
+  const getClientes = async() =>{
+    const response = await axios.get(`https://node-viernes2023.vercel.app/buscarhabitaciones`)
     setData(response.data.reserva)
     // console.log(data)
     }
 
   useEffect(() => {
     getClientes();
-  }) 
-
-
+  }, []) 
 
 
   const screenWidth = Dimensions.get('window').width;
