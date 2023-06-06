@@ -25,7 +25,7 @@ const ListarClientes = () => {
 
   useEffect(() => {
     getClientes();
-  }) 
+  }, []) 
 
  
   return (
