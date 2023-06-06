@@ -9,11 +9,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Hotel from './components/Hotel.js'
 import RegistroUsuario from './components/RegistroUsuario.js';
-import ListarClientes from './components/ListarClientes.js';
 
+import Screen from './screen/screen.js';
 
 const Stack = createNativeStackNavigator();
-const BottomTab = createBottomTabNavigator();
+
 
 
 export const users = []
@@ -50,7 +50,7 @@ if(findUser != "" && isValidName != "" && isValidPassword !=""){
             setPassword('');
           }else {setError('Usuario o contraseña inválidos')}
     } else {setError('Usuario no existe')}
-  } else{setError('Debe ingresar todos los campos') }
+  } else{setError('Debe ingresar todos los campos')}
 };
 
 // Funcion limpiar campos
@@ -101,18 +101,6 @@ if(findUser != "" && isValidName != "" && isValidPassword !=""){
 
 
 
-const MainStackNavigator = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Login" 
-        component={Login} />
-      <Stack.Screen name="Home" 
-        component={Hotel} />
-      <Stack.Screen name="Registro Usuario" 
-        component={RegistroUsuario} options={{ headerShown: false }}/>
-    </Stack.Navigator>
-  );
-};
 
 
 
@@ -131,12 +119,11 @@ const MainStackNavigator = () => {
 const App = () => {
   return (
     <NavigationContainer>
-      <BottomTab.Navigator>
-        <BottomTab.Screen name="Login" component={MainStackNavigator} options={{headerShown:false
-        }}/>
-        <BottomTab.Screen name="Hotel" component={Hotel} />
-        <BottomTab.Screen name="Lista de clientes" component={ListarClientes} />
-      </BottomTab.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name ="Login" component={Login}/>
+        <Stack.Screen name="Home" component={Screen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Registro Usuario" component={RegistroUsuario} options={{ headerShown: false }}/>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
