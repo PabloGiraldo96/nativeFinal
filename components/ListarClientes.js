@@ -11,9 +11,8 @@ export default function ListarClientes() {
   
   const [data, setData] = useState([])
   const getClientes = async() =>{
-    const response = await axios.get(`https://node-viernes2023.vercel.app/buscarhabitaciones`)
-    setData(response.data.reserva)
-    // console.log(data)
+    const response = await axios.get(`https://test-api-lovat-alpha.vercel.app/buscarreservas`)
+    setData(response.data.reservas)
     }
 
   useEffect(() => {
@@ -26,6 +25,7 @@ export default function ListarClientes() {
 
 
   return (
+
     <ScrollView contentContainerStyle={styles.scrollViewContent}>
 		<View style={styles.container}>
 		<Text style={styles.title}> </Text>

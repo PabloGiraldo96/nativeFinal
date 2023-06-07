@@ -9,9 +9,11 @@ import axios from 'axios';
 
 export default function App() {
   
+//CONSUMO DE API 
+
   const [data, setData] = useState([])
   const getCustomers = async() =>{
-    const response = await axios.get(`http://127.0.0.1:8080/buscarhabitaciones`)
+    const response = await axios.get(`https://test-api-lovat-alpha.vercel.app/buscarhabitaciones`)
     setData(response.data.Habitaciones)
     //console.log(data)
     }
@@ -21,11 +23,10 @@ export default function App() {
        //console.log(data)
     })
 
-
-
-
   const screenWidth = Dimensions.get('window').width;
   const cardWidth = screenWidth * 1.2; // 90% del ancho de la pantalla
+
+// PINTAMOS LA INFORMACION QUE TRAEMOS DEL API 
 
 
   return (
@@ -44,7 +45,7 @@ export default function App() {
           <Text style={styles.description}>{data.descripcion}</Text>
           <Text>
             <Text style={styles.icon}>x</Text>
-            <Text>{}</Text>
+            <Text>{data.cantidadMaximo}</Text>
           </Text>
           <Text style={styles.price}>Price: {data.precioNoche}</Text>
         </Card>
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'gray',
     padding: 10,
-    width: '45%',
+    width: '75%',
     height: '95%',
     marginBottom: 10,
 	  marginTop: 10

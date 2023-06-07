@@ -23,7 +23,6 @@ function agregarClientes(){
     }
   })
   const onSave = async(data) =>{
-    debugger
     let idHabitacion = data.id;
     let nombre = data.firstName;
     let apellido = data.lastName;
@@ -31,7 +30,7 @@ function agregarClientes(){
     let fechaInicio = data.dateInicio;
     let fechaFinal = data.dateFinal;
     let numeroPersona = data.numero;
-    const response = await axios.post(`http://localhost:8080/registrarreserva`,{
+    const response = await axios.post(`https://test-api-lovat-alpha.vercel.app/registrarreserva`,{
       idHabitacion,
       nombre,
       apellido,
@@ -161,7 +160,7 @@ function agregarClientes(){
                 value={value}
             />
         )}
-        name="numero"
+        name="numero Personas"
     />
 
     <Text style={{color: isError ? 'red' : 'green'}}>{message}</Text>
