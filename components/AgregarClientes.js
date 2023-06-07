@@ -152,7 +152,7 @@ function agregarClientes(){
 
         render={({ field: { onChange, onBlur, value } }) => (
             <TextInput
-                label="Numero"
+                label="Numero personas"
                 mode="outlined"
                 style={{ marginTop: 10 }}
                 onBlur={onBlur}
@@ -160,7 +160,7 @@ function agregarClientes(){
                 value={value}
             />
         )}
-        name="numero Personas"
+        name="numero"
     />
 
     <Text style={{color: isError ? 'red' : 'green'}}>{message}</Text>
